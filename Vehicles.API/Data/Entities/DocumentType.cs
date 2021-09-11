@@ -14,6 +14,6 @@ namespace Vehicles.API.Data.Entities
         public string Description { get; set; }
 
         //[JsonIgnore]
-        //public ICollection<User> Users { get; set; }
+        public ICollection<User> Users { get; set; }
     }
 }
