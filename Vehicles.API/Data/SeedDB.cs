@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Vehicles.API.Data.Entities;
 using Vehicles.API.Helpers;
@@ -52,8 +53,8 @@ namespace Vehicles.API.Data
                 await _userHelper.AddUserAsync(user, "123456");
                 await _userHelper.AddUserToRoleAsync(user, userType.ToString());
 
-                //string token = await _userHelper.GenerateEmailConfirmationTokenAsync(user);
-                //await _userHelper.ConfirmEmailAsync(user, token);
+                string token = await _userHelper.GenerateEmailConfirmationTokenAsync(user);
+                await _userHelper.ConfirmEmailAsync(user, token);
             }
         }
 
